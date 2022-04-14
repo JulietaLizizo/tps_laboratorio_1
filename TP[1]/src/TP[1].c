@@ -27,6 +27,7 @@ int main(void) {
 	    int banderaPrecio = 0;
 	    int banderaAerolineas = 0;
 	    int banderaLatam = 0;
+	    int bandera3 = 0;
 	    float descuentoDebAa;
 	    float interesCreAa;
 	    float precioBitAa;
@@ -110,6 +111,7 @@ int main(void) {
 	                unitarioL = precioUnitario(precioLatam, kilometros);
 	                diferenciaVuelos = diferencia(precioAerolineas, precioLatam);
 
+	                bandera3 = 1;
 	                printf("Calculando los costos\n");
 
 
@@ -125,12 +127,12 @@ int main(void) {
 
 
 
-	                if(banderaKm == 1 && banderaPrecio == 1){
+	                if(banderaKm == 1 && banderaPrecio == 1 && bandera3 == 1){
 
 	                    mostrarResultados (kilometros, precioAerolineas, descuentoDebAa, interesCreAa, precioBitAa, unitarioAa, precioLatam, descuentoDebL, interesCreL, precioBitL, unitarioL, diferenciaVuelos);
 
 	                }else{
-	                    printf("Debe ingresar todos los datos\n");
+	                    printf("Debe ingresar todos los datos y ejecutar la opcion 3 para realizar los calculos\n");
 	                }
 
 	                system("pause");
