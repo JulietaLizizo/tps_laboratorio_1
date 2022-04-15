@@ -150,6 +150,7 @@ int main(void) {
 	                diferenciaVuelos = diferencia(1629665, 159339);
 	                mostrarResultados (7090, 1629665, descuentoDebAa, interesCreAa, precioBitAa, unitarioAa, 159339, descuentoDebL, interesCreL, precioBitL, unitarioL, diferenciaVuelos);
 
+	                bandera3 = 0;
 
 	                system("pause");
 	                break;
