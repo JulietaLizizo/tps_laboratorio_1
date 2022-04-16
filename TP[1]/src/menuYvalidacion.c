@@ -8,11 +8,7 @@
 #include <stdlib.h>
 #include <math.h>
 #include "menuYvalidacion.h"
-/** \brief menu de opciones
- *
- * \return int opcion que ingresa el usuario
- *
- */
+
 int menu(){
 
     int opcion;
@@ -29,7 +25,7 @@ int menu(){
         printf("Ingrese una opcion\n");
         fflush(stdin);
         cant = scanf("%d", &opcion);
-        if(opcion >= 7 || cant == 0){
+        if(opcion >= 7 || opcion <= 0 || cant == 0){
 
             printf("No es una opcion valida\n");
             system("pause");
@@ -40,13 +36,7 @@ int menu(){
 
 
 }
-/** \brief pide y verifica un numero
- *
- * \param float numero que pide
- * \param int verificar que sea un numero y no sea negativo
- * \return float numero que se le ingresa
- *
- */
+
 float pedirKm (){
 
         float km;
@@ -65,12 +55,7 @@ float pedirKm (){
 }
 
 
-/** \brief comfirma la salida del menu
- *
- * \param x char* caracter que se ingresa para salir
- * \return void
- *
- */
+
 void confirmarSalida(char* x){
 
 
@@ -80,12 +65,7 @@ void confirmarSalida(char* x){
 
 }
 
-/** \brief opcion para ingresar precios
- *
- * \param ingreso int opcion de ingreso
- * \return float precio ingresado
- *
- */
+
 float ingresarPrecio(int ingreso){
 
     float precio;
@@ -112,7 +92,7 @@ float ingresarPrecio(int ingreso){
             }
         }else{
 
-            printf("Ingrese una opcion valida");
+            printf("Ingrese una opcion valida\n");
             scanf("%d", &ingreso);
         }
 
@@ -121,13 +101,7 @@ float ingresarPrecio(int ingreso){
 
 }
 
-/** \brief menu de vuelos e ingreso de precios
- *
- * \param x float primer numero (precio) a ingresar
- * \param y float segundo numero (precio) a ingresar
- * \return int opcion de menu que elige
- *
- */
+
 int subMenuVuelos(float x, float y){
 
     int opcion;
@@ -139,7 +113,7 @@ int subMenuVuelos(float x, float y){
     printf("2- Latam\n");
     printf("Elija una opcion\n");
     cant = scanf("%d", &opcion);
-    while (opcion >= 3 || cant == 0){
+    while (opcion >= 3 || opcion <= 0 || cant == 0){
         fflush(stdin);
         printf("Ingrese un numero valido\n");
         cant = scanf("%d", &opcion);
@@ -149,13 +123,7 @@ int subMenuVuelos(float x, float y){
 }
 
 
-/** \brief mostrar resultados
- *
- * \param float numeros (resultados)
- * \param
- * \return
- *
- */
+
 void mostrarResultados (float km, float precioAa, float precioDa, float precioCa, float precioBa, float precioUa, float precioL, float precioDl, float precioCl, float precioBl, float precioUl, float difVuelos){
 
     printf("Kilometros ingresados: %.2f km \n\n", km);
@@ -169,7 +137,7 @@ void mostrarResultados (float km, float precioAa, float precioDa, float precioCa
 	printf("Precio Latam: $%.2f \n", precioL);
 	printf("a) Precio con tarjeta de debito: $%.2f \n", precioDl);
 	printf("b) Precio con tarjeta de credito: $%.2f \n", precioCl);
-	printf("c) Precio pagando con bitcoins: %.5f BTC \n", precioBl);
+	printf("c) Precio pagando con bitcoins: %.2f BTC \n", precioBl);
 	printf("d) Precio unitario: $%.2f \n\n", precioUl);
 
 	printf("La diferencia de precio es: $%.2f \n\n", difVuelos);
